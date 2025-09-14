@@ -1,0 +1,57 @@
+.topBar {
+     background-color: var(--bg-card-opaque);
+     border-bottom: var(--table-border-width) solid var(--border-primary);
+     padding: var(--spacing-xs) var(--spacing-xl);
+   }
+
+   .mainTabs {
+     display: flex;
+     gap: var(--spacing-xs);
+     margin-bottom: var(--spacing-xs);
+   }
+
+   .tab {
+     padding: var(--spacing-xs) var(--spacing-md);
+     background: none;
+     border: none;
+     color: var(--text-secondary);
+     font-size: var(--font-size-base);
+     font-weight: var(--font-weight-medium);
+     cursor: pointer;
+     border-radius: var(--border-radius);
+     transition: var(--button-transition);
+   }
+
+   .tab:hover {
+     background-color: var(--bg-slate-700);
+   }
+
+   .tab.active {
+     background-color: var(--bg-button-primary);
+     color: var(--text-primary);
+   }
+
+   .subTabs {
+     display: flex;
+     gap: var(--spacing-xs);
+   }
+
+   .subTab {
+     padding: var(--spacing-xs) var(--spacing-sm);
+     background: none;
+     border: none;
+     color: var(--text-muted);
+     font-size: var(--font-size-sm);
+     cursor: pointer;
+     border-radius: var(--border-radius);
+     transition: var(--button-transition);
+   }
+
+   .subTab:hover {
+     background-color: var(--bg-slate-700);
+   }
+
+   .subTab.active {
+     background-color: var(--bg-tag-info);
+     color: var(--text-tag-info);
+   }

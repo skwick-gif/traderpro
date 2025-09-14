@@ -1,0 +1,82 @@
+.statusBar {
+     position: sticky;
+     top: 0;
+     background: linear-gradient(to right, #3b82f6, #9333ea);
+     padding: var(--spacing-lg) var(--spacing-xl);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 50;
+     border-bottom: var(--table-border-width) solid var(--border-primary);
+     height: 5rem;
+     overflow: hidden;
+   }
+
+   .logo {
+     display: flex;
+     align-items: center;
+     gap: var(--spacing-md);
+   }
+
+   .logoIcon {
+     font-size: var(--font-size-xl);
+   }
+
+   .toolName {
+     font-size: var(--font-size-xl);
+     font-weight: var(--font-weight-bold);
+     color: var(--text-primary);
+   }
+
+   .statusItems {
+     display: flex;
+     align-items: center;
+     gap: var(--spacing-lg);
+   }
+
+   .statusItem {
+     display: flex;
+     align-items: center;
+     gap: var(--spacing-sm);
+     color: var(--text-secondary);
+     font-size: var(--font-size-sm);
+   }
+
+   .connected {
+     color: var(--text-success);
+     width: var(--spacing-lg);
+     height: var(--spacing-lg);
+   }
+
+   .disconnected {
+     color: var(--text-error);
+     width: var(--spacing-lg);
+     height: var(--spacing-lg);
+   }
+
+   .connectedTag {
+     background-color: var(--bg-tag-success);
+     color: var(--text-tag-success);
+     padding: var(--spacing-xs) var(--spacing-sm);
+     border-radius: var(--border-radius);
+     font-size: var(--font-size-xs);
+   }
+
+   .disconnectedTag {
+     background-color: var(--bg-tag-error);
+     color: var(--text-tag-error);
+     padding: var(--spacing-xs) var(--spacing-sm);
+     border-radius: var(--border-radius);
+     font-size: var(--font-size-xs);
+   }
+
+   .vixIcon {
+     width: var(--spacing-md);
+     height: var(--spacing-md);
+     color: var(--text-warning);
+   }
+
+   .vixValue {
+     font-weight: var(--font-weight-semibold);
+     color: var(--text-amber-400);
+   }

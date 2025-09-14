@@ -1,0 +1,87 @@
+.modalOverlay {
+       position: fixed;
+       inset: 0;
+       background-color: rgba(0, 0, 0, 0.5);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       z-index: 50;
+     }
+
+     .modal {
+       background-color: var(--bg-card-opaque);
+       border-radius: var(--border-radius-lg);
+       padding: var(--modal-padding);
+       max-width: var(--modal-max-width);
+       max-height: var(--modal-max-height);
+       overflow-y: auto;
+       border: var(--table-border-width) solid var(--border-primary);
+     }
+
+     .title {
+       font-size: var(--font-size-xl);
+       font-weight: var(--font-weight-bold);
+       margin-bottom: var(--spacing-xl);
+       color: var(--text-primary);
+     }
+
+     .form {
+       display: flex;
+       flex-direction: column;
+       gap: var(--spacing-md);
+     }
+
+     .field {
+       display: flex;
+       flex-direction: column;
+       gap: var(--spacing-xs);
+     }
+
+     .label {
+       font-size: var(--font-size-sm);
+       color: var(--text-secondary);
+       font-weight: var(--font-weight-medium);
+     }
+
+     .input {
+       padding: var(--spacing-sm) var(--spacing-md);
+       background-color: var(--bg-slate-700);
+       border: var(--table-border-width) solid var(--border-primary);
+       border-radius: var(--border-radius);
+       color: var(--text-primary);
+       font-size: var(--font-size-sm);
+     }
+
+     .buttons {
+       display: flex;
+       justify-content: flex-end;
+       gap: var(--spacing-md);
+       margin-top: var(--spacing-lg);
+     }
+
+     .cancelButton, .saveButton {
+       padding: var(--spacing-md) var(--spacing-lg);
+       border: none;
+       border-radius: var(--border-radius);
+       cursor: pointer;
+       transition: var(--button-transition);
+       font-size: var(--font-size-sm);
+     }
+
+     .cancelButton {
+       background-color: var(--bg-button-secondary);
+       color: var(--text-primary);
+     }
+
+     .cancelButton:hover {
+       background-color: var(--bg-slate-700);
+     }
+
+     .saveButton {
+       background-color: var(--bg-button-primary);
+       color: var(--text-primary);
+     }
+
+     .saveButton:hover {
+       background-color: #1d4ed8;
+     }
