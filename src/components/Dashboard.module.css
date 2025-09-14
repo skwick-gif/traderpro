@@ -1,4 +1,4 @@
-.dashboard {
+﻿.dashboard {
      padding: var(--spacing-xl);
    }
 
@@ -93,16 +93,4 @@
      color: var(--text-tag-info);
    }
 
-   .sidebar {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 16rem;
-     background-color: var(--bg-slate-800/60);
-     backdrop-filter: blur(4px);
-     padding: var(--spacing-xl);
-     border-right: var(--table-border-width) solid var(--border-primary);
-     display: flex;
-     flex-direction: column;
-     gap: var(--spacing-md);
-   }
+   

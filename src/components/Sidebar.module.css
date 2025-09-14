@@ -1,34 +1,81 @@
-.sidebar {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 16rem;
-     background-color: var(--bg-slate-800/60);
-     backdrop-filter: blur(4px);
-     padding: var(--spacing-xs);
-     display: flex;
-     flex-direction: column;
-     gap: var(--spacing-xs);
-     z-index: 40;
-     height: calc(100vh - var(--top-bar-height));
-     overflow-y: auto;
-   }
+﻿.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14rem; /* הקטנתי מ-16rem ל-14rem */
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: var(--blur-backdrop);
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  z-index: 40;
+  height: calc(100vh - var(--top-bar-height));
+  overflow-y: auto;
+  border-right: 1px solid var(--border-primary);
+}
 
-   .sidebarButton {
-     padding: var(--spacing-xs);
-     background-color: var(--bg-button-secondary);
-     color: var(--text-primary);
-     border: none;
-     border-radius: var(--border-radius);
-     font-size: var(--font-size-xs);
-     cursor: pointer;
-     transition: var(--button-transition);
-     width: 100%;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-   }
+.sidebarButton {
+  padding: var(--spacing-xs) var(--spacing-sm); /* הקטנתי הפדינג */
+  background: var(--bg-button-secondary);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs); /* הקטנתי הפונט */
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--button-transition);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  min-height: 28px; /* גובה מינימלי קטן יותר */
+}
 
-   .sidebarButton:hover {
-     background-color: var(--bg-slate-700);
-   }
+.sidebarButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 500ms;
+}
+
+.sidebarButton:hover::before {
+  left: 100%;
+}
+
+.sidebarButton:hover {
+  background: var(--bg-button-secondary-hover);
+  border-color: var(--border-hover);
+  transform: translateX(2px);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-primary);
+}
+
+.sidebarButton:active {
+  transform: translateX(1px);
+  box-shadow: none;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(71, 85, 105, 0.2);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
