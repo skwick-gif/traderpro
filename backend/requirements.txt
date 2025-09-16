@@ -1,0 +1,46 @@
+# Stock Scanner Python Dependencies
+
+# Core data analysis
+yfinance==0.2.18
+pandas==2.0.3
+numpy==1.24.3
+
+# Technical analysis
+
+# Natural language processing
+textblob==0.17.1
+
+# Web scraping and requests
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# FastAPI and WebSocket server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+python-multipart==0.0.6
+
+# Database
+
+# Data validation
+pydantic==2.4.2
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Logging and debugging
+loguru==0.7.2
+
+# Optional: Advanced ML libraries (for future AI features)
+scikit-learn==1.3.0
+xgboost==1.7.6
+
+# Optional: Plotting (for development/testing)
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Development dependencies
+pytest==7.4.2
+pytest-asyncio==0.21.1

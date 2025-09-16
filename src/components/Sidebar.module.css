@@ -1,11 +1,14 @@
 ﻿.sidebar {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 136px; /* StatusBar + TopBar */
   left: 0;
-  width: 14rem; /* הקטנתי מ-16rem ל-14rem */
+  width: 14rem;
   background: rgba(30, 41, 59, 0.85);
   backdrop-filter: var(--blur-backdrop);
-  padding: var(--spacing-sm);
+  padding-top: 0;
+  padding-right: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
@@ -16,13 +19,13 @@
 }
 
 .sidebarButton {
-  padding: var(--spacing-xs) var(--spacing-sm); /* הקטנתי הפדינג */
+  padding: 1rem 1.5rem;
   background: var(--bg-button-secondary);
   color: var(--text-primary);
   border: 1px solid transparent;
   border-radius: var(--border-radius);
-  font-size: var(--font-size-xs); /* הקטנתי הפונט */
-  font-weight: var(--font-weight-medium);
+  font-size: 1.15rem;
+  font-weight: var(--font-weight-bold);
   cursor: pointer;
   transition: var(--button-transition);
   width: 100%;
@@ -30,7 +33,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
-  min-height: 28px; /* גובה מינימלי קטן יותר */
+  min-height: 44px;
 }
 
 .sidebarButton::before {

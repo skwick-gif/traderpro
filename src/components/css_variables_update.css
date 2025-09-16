@@ -1,0 +1,50 @@
+/* Add these CSS variables to your existing GlobalStyles.css */
+
+:root {
+  /* Existing variables... */
+  
+  /* Stock Scanner specific variables */
+  --accent-secondary: #10b981;
+  --accent-primary-alpha: rgba(59, 130, 246, 0.2);
+  
+  /* Score colors */
+  --bg-score-excellent: rgba(16, 185, 129, 0.2);
+  --text-score-excellent: #10b981;
+  --bg-score-good: rgba(59, 130, 246, 0.2);
+  --text-score-good: #3b82f6;
+  --bg-score-fair: rgba(245, 158, 11, 0.2);
+  --text-score-fair: #f59e0b;
+  --bg-score-poor: rgba(239, 68, 68, 0.2);
+  --text-score-poor: #ef4444;
+  
+  /* Risk level colors */
+  --bg-tag-success: rgba(16, 185, 129, 0.15);
+  --text-tag-success: #10b981;
+  --bg-tag-warning: rgba(245, 158, 11, 0.15);
+  --text-tag-warning: #f59e0b;
+  --bg-tag-error: rgba(239, 68, 68, 0.15);
+  --text-tag-error: #ef4444;
+  --bg-tag-info: rgba(59, 130, 246, 0.15);
+  --text-tag-info: #3b82f6;
+  
+  /* Button colors */
+  --bg-button-success: #10b981;
+  --bg-button-success-hover: #059669;
+  --bg-button-danger: #ef4444;
+  --bg-button-danger-hover: #dc2626;
+  
+  /* Slider colors */
+  --bg-slider-track: rgba(156, 163, 175, 0.3);
+  
+  /* Table colors */
+  --bg-table-header: rgba(15, 23, 42, 0.8);
+  --bg-table-row-hover: rgba(51, 65, 85, 0.3);
+  
+  /* Input colors */
+  --bg-input: rgba(15, 23, 42, 0.6);
+  --border-input: rgba(75, 85, 99, 0.4);
+  --input-transition: all 0.2s ease;
+  
+  /* Additional spacing for complex layouts */
+  --spacing-2xl: 2rem;
+}

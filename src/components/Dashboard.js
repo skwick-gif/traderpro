@@ -3,50 +3,56 @@ import React from 'react';
    import useWebSocket from '../hooks/useWebSocket';
 
    function Dashboard() {
-     const { data: statsData } = useWebSocket('ws://localhost:8000/ws/stats');
-     const { data: scansData } = useWebSocket('ws://localhost:8000/ws/scans');
+    const [fredData, setFredData] = React.useState({ rate: null, inflation: null, calendar: [] });
 
-     const stats = statsData || [];
-     const recentScans = scansData || [];
+    React.useEffect(() => {
+      async function fetchFred() {
+        try {
+          const res = await fetch('/api/fred');
+          const fred = await res.json();
+          setFredData({ rate: fred.rate, inflation: fred.inflation, calendar: fred.calendar ?? [] });
+        } catch (e) {
+          setFredData({ rate: null, inflation: null, calendar: [] });
+        }
+      }
+      fetchFred();
+    }, []);
 
-     return (
-       <div className={styles.dashboard}>
-         <div className={styles.statsGrid}>
-           {stats.map((stat, index) => (
-             <div key={index} className={styles.statCard}>
-               <h3 className={styles.statLabel}>{stat.label}</h3>
-               <p className={styles.statValue}>{stat.value}</p>
-               <span className={`${styles.trend} ${styles[stat.trend]}`}>{stat.trend === 'up' ? '↑' : '↓'}</span>
-             </div>
-           ))}
-         </div>
-         <div className={styles.tableSection}>
-           <h2 className={styles.sectionTitle}>Recent Scans</h2>
-           <div className={styles.tableContainer}>
-             <table className={styles.table}>
-               <thead>
-                 <tr>
-                   <th>Symbol</th>
-                   <th>Price</th>
-                   <th>Volume</th>
-                   <th>Type</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 {recentScans.map((scan, index) => (
-                   <tr key={index}>
-                     <td>{scan.symbol}</td>
-                     <td>{scan.price}</td>
-                     <td>{scan.volume?.toLocaleString()}</td>
-                     <td><span className={`${styles.tag} ${styles[`tag-${scan.type?.toLowerCase()}`]}`}>{scan.type}</span></td>
-                   </tr>
-                 ))}
-               </tbody>
-             </table>
-           </div>
-         </div>
-       </div>
-     );
+    return (
+      <div className={styles.dashboard}>
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard}>
+            <h3 className={styles.statLabel}>Fed Rate</h3>
+            <p className={styles.statValue}>{fredData.rate ?? 'N/A'}</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3 className={styles.statLabel}>Inflation (CPI)</h3>
+            <p className={styles.statValue}>{fredData.inflation ?? 'N/A'}</p>
+          </div>
+        </div>
+        <div className={styles.tableSection}>
+          <h2 className={styles.sectionTitle}>Economic Calendar</h2>
+          <div className={styles.tableContainer}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Event</th>
+                </tr>
+              </thead>
+              <tbody>
+                {fredData.calendar.map((item, idx) => (
+                  <tr key={idx}>
+                    <td>{item.date}</td>
+                    <td>{item.event}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    );
    }
 
    export default Dashboard;

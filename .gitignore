@@ -1,1 +1,25 @@
+
+# Dependency/build/system files
 node_modules/
+dist/
+build/
+.env
+.DS_Store
+.vs/
+.vscode/
+logs/
+*.log
+*.sqlite
+*.db
+package-lock.json
+
+# Docker artifacts (if not relevant)
+*.Dockerfile
+docker-compose*.yml
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS/Editor files
+Thumbs.db

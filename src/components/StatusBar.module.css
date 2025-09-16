@@ -1,28 +1,19 @@
 .statusBar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
   padding: var(--spacing-lg) var(--spacing-xl);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 50;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: var(--table-border-width) solid var(--border-primary);
   height: 5rem;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  backdrop-filter: var(--blur-backdrop);
-}
-
-.statusBar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(236, 72, 153, 0.1) 100%);
-  z-index: -1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -33,81 +24,70 @@
 
 .logoIcon {
   font-size: var(--font-size-xl);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .toolName {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: -0.5px;
 }
 
 .statusItems {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 .statusItem {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   font-size: var(--font-size-sm);
-  background: rgba(255, 255, 255, 0.1);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .connected {
   color: var(--text-success);
   width: var(--spacing-lg);
   height: var(--spacing-lg);
-  filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.5));
 }
 
 .disconnected {
   color: var(--text-error);
   width: var(--spacing-lg);
   height: var(--spacing-lg);
-  filter: drop-shadow(0 0 4px rgba(248, 113, 113, 0.5));
 }
 
 .connectedTag {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.2));
+  background-color: var(--bg-tag-success);
   color: var(--text-tag-success);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--border-radius);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
 }
 
 .disconnectedTag {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.2));
+  background-color: var(--bg-tag-error);
   color: var(--text-tag-error);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--border-radius);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
 }
 
 .vixIcon {
   width: var(--spacing-md);
   height: var(--spacing-md);
   color: var(--text-warning);
-  filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5));
 }
 
 .vixValue {
   font-weight: var(--font-weight-semibold);
-  color: var(--text-amber-400);
-  text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+  color: #fbbf24;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }

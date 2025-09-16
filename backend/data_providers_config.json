@@ -1,0 +1,56 @@
+{
+  "twelve_data": {
+    "name": "Twelve Data",
+    "base_url": "https://api.twelvedata.com",
+    "rate_limit_per_minute": 55,
+    "data_quality_score": 9.5,
+    "real_time": true,
+    "priority": 1,
+    "enabled": true
+  },
+  "polygon": {
+    "name": "Polygon",
+    "base_url": "https://api.polygon.io",
+    "rate_limit_per_minute": 5,
+    "data_quality_score": 9.0,
+    "real_time": true,
+    "priority": 2,
+    "enabled": true
+  },
+  "alpha_vantage": {
+    "name": "Alpha Vantage",
+    "base_url": "https://www.alphavantage.co/query",
+    "rate_limit_per_minute": 5,
+    "data_quality_score": 8.5,
+    "real_time": false,
+    "priority": 3,
+    "enabled": true
+  },
+  "finnhub": {
+    "name": "Finnhub",
+    "base_url": "https://finnhub.io/api/v1",
+    "rate_limit_per_minute": 60,
+    "data_quality_score": 8.0,
+    "real_time": true,
+    "priority": 4,
+    "enabled": true
+  },
+  "fmp": {
+    "name": "Financial Modeling Prep",
+    "base_url": "https://financialmodelingprep.com/api/v3",
+    "rate_limit_per_minute": 250,
+    "data_quality_score": 8.5,
+    "real_time": false,
+    "priority": 5,
+    "enabled": true
+  },
+  "yahoo_finance": {
+    "name": "Yahoo Finance",
+    "base_url": "",
+    "rate_limit_per_minute": 2000,
+    "data_quality_score": 7.0,
+    "real_time": false,
+    "priority": 6,
+    "enabled": true
+  }
+}
